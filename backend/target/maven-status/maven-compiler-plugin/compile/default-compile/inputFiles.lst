@@ -1,0 +1,5 @@
+/workspaces/springboot-angular-crud/backend/src/main/java/com/example/demo/controller/UserController.java
+/workspaces/springboot-angular-crud/backend/src/main/java/com/example/demo/model/User.java
+/workspaces/springboot-angular-crud/backend/src/main/java/com/example/demo/DemoApplication.java
+/workspaces/springboot-angular-crud/backend/src/main/java/com/example/demo/service/UserService.java
+/workspaces/springboot-angular-crud/backend/src/main/java/com/example/demo/repository/UserRepository.java

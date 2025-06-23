@@ -1,0 +1,15 @@
+<!-- user-list.component.html placeholder -->
+<div class="container">
+  <h2>User List</h2>
+  <form (submit)="addUser()">
+    <input [(ngModel)]="newUser.name" name="name" placeholder="Name" required />
+    <input [(ngModel)]="newUser.email" name="email" placeholder="Email" required />
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    <li *ngFor="let user of users">
+      {{ user.name }} ({{ user.email }})
+      <button (click)="deleteUser(user.id!)">Delete</button>
+    </li>
+  </ul>
+</div>
