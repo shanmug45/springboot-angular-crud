@@ -1,20 +1,56 @@
 {
-  "name": "angular-frontend",
-  "version": "0.0.1",
-  "scripts": {
-    "start": "ng serve"
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "defaultProject": "angular-frontend",
+  "projects": {
+    "angular-frontend": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angular-frontend",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-frontend:build"
+          }
+        }
+      }
+    }
   },
-  "dependencies": {
-    "@angular/core": "^16.0.0",
-    "@angular/common": "^16.0.0",
-    "@angular/forms": "^16.0.0",
-    "@angular/platform-browser": "^16.0.0",
-    "@angular/router": "^16.0.0",
-    "rxjs": "~7.8.0",
-    "zone.js": "~0.13.0"
-  },
-  "devDependencies": {
-    "@angular/cli": "~16.0.0",
-    "typescript": "~5.0.0"
+  "cli": {
+    "analytics": false
   }
 }

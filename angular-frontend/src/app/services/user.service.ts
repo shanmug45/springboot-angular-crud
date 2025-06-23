@@ -7,7 +7,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = 'http://localhost:8080/api/users';
+  private baseUrl = 'https://bug-free-space-telegram-4p6594r57gvfq74j-8080.app.github.dev/api/users';
 
   constructor(private http: HttpClient) {}
 
